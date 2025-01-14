@@ -4,7 +4,7 @@
 // - protoc             v5.29.1
 // source: auth_service.proto
 
-package sphere_auth
+package auth_service
 
 import (
 	context "context"
