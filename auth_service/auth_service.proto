@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package auth_service;
+package auth_proto;
 
-option go_package = "github.com/aminbista66/sphere-proto/auth_service";
+option go_package = "github.com/aminbista66/sphere-proto/auth_proto";
 
 service AuthService {
     rpc Login(LoginRequest) returns (LoginResponse);
