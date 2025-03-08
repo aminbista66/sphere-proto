@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package codestore;
+option go_package = "gen/codestore";
+
+service CodeStore {
+    rpc PullRepo(PullRepoRequest) returns (PullRepoResponse);
+    rpc UploadCode(stream FileChunk) returns (UploadCodeResponse);
+}
+
+message PullRepoRequest {
+    string url = 1;
+}
+
+message PullRepoResponse {
+    string reponame = 1;
+    string url = 2;
+    string message = 3;
+    string success = 4;
+}
+
+message FileChunk {
+    bytes data = 1;
+    string filename = 2;
+}
+
+message UploadCodeResponse {
+    string message = 1;
+    bool success = 2;
+}
